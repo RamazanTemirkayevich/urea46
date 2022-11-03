@@ -1,0 +1,192 @@
+.hero {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 150px 15px 25px;
+
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    a {
+        text-decoration: none;
+    }
+
+    &::after {
+        position: absolute;
+
+        content: '';
+
+        top: -50px;
+        right: 76px;
+        
+        width: 191px;
+        height: 610px;
+        
+        background: rgba(66,255,0,.3);
+        mix-blend-mode: multiply;
+        transform: rotate(21deg);
+
+        z-index: -2;
+    }
+
+    &__info-wrap {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            font-family: $font-mag;
+            font-weight: 500;
+            font-size: 44px;
+            line-height: 43px;
+
+            color: var(--primary-600);
+        }
+
+        p {
+            margin-top: 15px;
+
+            padding-right: 20px;
+
+            font-family: $font-second;
+            font-weight: 400;
+            font-size: 20px;
+
+            color: var(--gray-200);
+
+            @include rmin($tablet) {
+                padding-right: 50%;
+            }
+        }
+    }
+
+    &__info-btn {
+        margin-top: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 12px;
+
+        background-color: var(--primary-500);
+        border-radius: 59px;
+
+        //
+        font-family: $font-rob;
+        font-weight: 400;
+        font-size: 20px;
+
+        color: var(--white);
+
+        @include rmin($tablet) {
+            padding: 12px 55px;
+            width: fit-content;
+        }
+    }
+
+    &__img-wrap {
+        position: relative;
+
+        z-index: -1;
+
+        img:first-child,
+        img:last-child {
+            position: absolute;
+
+            right: 0;
+            bottom: -25px;
+
+            width: 594px;
+            width: 100%;
+            height: auto;
+
+            display: flex;
+
+            object-fit: contain;
+
+            @include rmin($tablet) {
+                bottom: 0;
+                right: -21px;
+            }
+        }
+
+        img:first-child {
+            display: none;
+
+            @include rmin($tablet) {
+                display: flex;
+                bottom: 35px;
+            }
+        }
+
+        img:last-child {
+            bottom: -26px;
+
+            &::after {
+                content: '';
+
+                
+                background: linear-gradient(180deg, rgba(217, 217, 217, 0) 7.65%, #D9D9D9 28.63%);
+                transform: rotate(-180deg);
+            }
+        }
+    }
+}
+
+@include rmin($desktop) {
+    .hero {
+        padding: 201px 15px 25px;
+
+        top: -24px;
+
+        @include rmin($desktop-s) {
+            margin: auto;
+        }
+
+        @include rmin($desktop-l) {
+            max-width: 1440px;
+
+            padding-left: 143px;
+        }
+
+        &::after {
+            top: -74px;
+            right: 192px;
+
+            width: 291px;
+        }
+
+        &__info-wrap {
+            h1 {
+                font-size: 64px;
+            }
+
+            p {
+                margin-top: 25px;
+
+                font-size: 28px;
+            }
+        }
+
+        &__img-wrap {
+            img:first-child,
+            img:last-child {
+                right: -3%;
+
+                max-width: 800px;
+
+                @include rmin($desktop-l) {
+                    right: -2%;
+                }
+            }
+        }
+
+        &__info-btn {
+            margin-top: 50px;
+        }
+    }
+}
