@@ -1,3 +1,2 @@
-import sayHello from './lib/sayHello';
-
-sayHello();
+import './lib/select';
+import './lib/menu';

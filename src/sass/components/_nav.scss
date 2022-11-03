@@ -1,0 +1,61 @@
+.nav {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    height: 100%;
+
+    left: -100%;
+    top: 0;
+
+    background-color: var(--white);
+
+    transition: .3s;
+
+    &.active {
+        left: 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    &__list-item a {
+        font-family: $font-mag;
+        font-weight: 400;
+        font-size: 16px;
+
+        color: var(--gray-300);
+    }
+}
+
+@include rmin($desktop) {
+    .nav {
+        position: relative;
+
+        margin: auto;
+
+        top: -80px;
+        left: 0;
+
+        width: 478px;
+        height: 24px;
+
+        z-index: 5;
+
+        &__list {
+            flex-direction: row;
+            justify-content: space-between;
+
+            width: 100%;
+        }
+    }
+}
