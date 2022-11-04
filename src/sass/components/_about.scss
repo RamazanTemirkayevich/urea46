@@ -1,0 +1,158 @@
+.about {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px 15px;
+
+    &__info {
+        padding: 28px 34px;
+
+        background-color: var(--white);
+        border: 1px solid var(--primary-500);
+        border-radius: var(--br--20);
+
+        @include rmin($phone-m) {
+            padding: 28px 20%;
+        }
+    }
+
+    &__info-list,
+    &__info-item,
+    &__info-descr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__info-list {
+        gap: 25px;
+    }
+
+    &__info-item {
+        gap: 10px;
+
+        svg {
+            flex-shrink: 0;
+
+            width: 36px;
+            height: 36px;
+
+            fill: var(--primary-500);
+            stroke: unset;
+        }
+    }
+
+    &__info-descr {
+        gap: 5px;
+
+        text-align: center;
+
+        strong {
+            font-family: $font-mag;
+            font-weight: 500;
+            font-size: 18px;
+
+            color: var(--black);
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 14px;
+
+            color: var(--gray-300);
+        }
+    }
+
+    &__img-wrap {
+        margin-top: 25px;
+
+        width: 100%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+        }
+    }
+}
+
+@include rmin($tablet) {
+    .about {
+        padding: 75px 35px;
+
+        @include rmin($desktop-s) {
+            padding: 117px 0 75px;
+        }
+
+        &__info {
+            padding: 48px 54px 83px;
+
+            @include rmin($desktop) {
+                width: 775px;
+            }
+        }
+
+        &__info-list,
+        &__info-item,
+        &__info-descr {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        &__info-item {
+            flex-direction: row;
+
+            gap: 25px;
+
+            width: 45%;
+
+            @include rmin($desktop-s) {
+                width: 72%;
+            }
+
+            svg {
+                @include rmin($desktop) {
+                    width: 56px;
+                    height: 56px;
+                }
+            }
+        }
+
+        &__info-descr {
+            gap: 10px;
+
+            text-align: start;
+
+            strong {
+                font-size: 20px;
+            }
+
+            span {
+                @include rmin($desktop) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__img-wrap {
+            position: absolute;
+
+            right: 25px;
+            top: 30px;
+
+            width: 370px;
+
+            @include rmin($desktop) {
+                width: 470px;
+                height: 490px;
+
+                top: 36px;
+            }
+        }
+    }
+}

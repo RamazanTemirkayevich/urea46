@@ -1,0 +1,24 @@
+mixin about()
+    <section class="filled">
+        <div class="container">
+            <div class="about">
+                <div class="about__info">
+                    <ul class="about__info-list">
+                        +about-item('delivery', 'Delivery:', 'After the contract is signed by both sides the cargo will be released to port of delivery.')
+                        +about-item('quality', 'Quality:', 'All the products provided by Urea46 are of the highest quality and are accompanied with the matching certifications.')
+                        +about-item('payment', 'Payment:', 'We do not ask for the prepayment to be made, however the payment should be done upon the delivery of the cargo to port.')
+                    </ul>
+                </div>
+                <div class="about__img-wrap">
+                    <img src="./img/block.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+mixin about-item(aboutIco='', aboutTitle='', aboutDescr='')
+    li(class="about__info-item")
+        +icon(`${aboutIco}`)
+        div(class="about__info-descr")
+            strong= aboutTitle
+            span= aboutDescr

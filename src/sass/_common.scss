@@ -28,35 +28,30 @@ body {
     }
 }
 
-.padd {
-    &--t {
-        padding-top: 50px !important;
-        padding-bottom: 10px !important;
+.filled {
+	background-color: var(--primary-500);
+}
+
+.t-crop {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--one-l {
+        -webkit-line-clamp: 1;
     }
 
-    &--tb,
-    &--tb-small,
-    &--tb-medium {
-        padding-top: 50px !important;
-        padding-bottom: 50px !important;
+    &--two-l {
+        -webkit-line-clamp: 2;
     }
 
-    @include rmin($desktop) {
-        &--t {
-            padding-top: 75px !important;
-            padding-bottom: 75px !important;
-        }
-        &--tb {
-            padding-top: 75px !important;
-            padding-bottom: 75px !important;
-        }
-        &--tb-small {
-            padding-top: 50px !important;
-            padding-bottom: 50px !important;
-        }
-        &--tb-medium {
-            padding-top: 100px !important;
-            padding-bottom: 100px !important;
-        }
+    &--tree-l {
+        -webkit-line-clamp: 3;
+    }
+
+    &--four-l {
+        -webkit-line-clamp: 4;
     }
 }

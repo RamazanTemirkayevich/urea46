@@ -7,7 +7,7 @@ $desktop-s: 1200;
 $desktop-l: 1440;
 
 // fonts
-$font-main: "Inter", sans-serif 400;
+$font-main: "Inter", sans-serif;
 $font-second: "Gilroy", sans-serif;
 $font-mag: "Magistral", sans-serif;
 $font-rob: "Roboto", sans-serif;
@@ -34,6 +34,8 @@ $max-width: 1140px;
   --br--15: 15px;
   --br--18: 18px;
   --br--20: 20px;
+  --br--24: 24px;
   --br--25: 25px;
+  --br--32: 32px;
   --br--41: 41px;
 }

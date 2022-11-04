@@ -88,50 +88,73 @@
         }
     }
 
-    &__img-wrap {
-        position: relative;
+    &__img-under,
+    &__img-over {
+        position: absolute;
 
+        display: flex;
+        
+        right: 0;
+        bottom: -25px;
+        
+        width: 100%;
+        max-width: 599px;
+        height: auto;
+        
         z-index: -1;
 
-        img:first-child,
-        img:last-child {
-            position: absolute;
-
-            right: 0;
-            bottom: -25px;
-
-            width: 594px;
+        img {
             width: 100%;
-            height: auto;
-
-            display: flex;
+            height: 100%;
 
             object-fit: contain;
-
-            @include rmin($tablet) {
-                bottom: 0;
-                right: -21px;
-            }
         }
 
-        img:first-child {
-            display: none;
-
-            @include rmin($tablet) {
-                display: flex;
-                bottom: 35px;
-            }
+        @include rmin($tablet) {
+            bottom: 0;
+            right: -21px;
         }
+    }
 
-        img:last-child {
-            bottom: -26px;
+    &__img-under {
+        display: none;
+
+        @include rmin($tablet) {
+            display: flex;
+            top: -52px;
+            
+            opacity: 0.3;
+            filter: blur(2.5px);
 
             &::after {
+                position: absolute;
                 content: '';
+    
+                width: 100%;
+                height: 100%;
+    
+                background: linear-gradient(-242deg, #FFFFFF 29.33%, rgba(217, 217, 217, 0) 62.82%);
+            }  
+        }
+    }
 
-                
-                background: linear-gradient(180deg, rgba(217, 217, 217, 0) 7.65%, #D9D9D9 28.63%);
-                transform: rotate(-180deg);
+    &__img-over {
+        bottom: -26px;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 100%;
+            height: 51%;
+
+            bottom: 0;
+            left: 0;
+
+            background: linear-gradient(360deg, #FFFFFF 29.33%, rgba(217, 217, 217, 0) 62.82%);
+
+            @include rmin($desktop) {
+                bottom: -21px;
             }
         }
     }
@@ -145,6 +168,7 @@
 
         @include rmin($desktop-s) {
             margin: auto;
+            padding: 201px 15px 50px 64px;
         }
 
         @include rmin($desktop-l) {
@@ -167,26 +191,53 @@
 
             p {
                 margin-top: 25px;
+                padding-right: 52%;
 
                 font-size: 28px;
             }
         }
 
-        &__img-wrap {
-            img:first-child,
-            img:last-child {
-                right: -3%;
+        &__img-under,
+        &__img-over {
+            max-width: 800px;
 
-                max-width: 800px;
+            @include rmin($desktop-l) {
+                right: -2%;
+            }
+        }
 
-                @include rmin($desktop-l) {
-                    right: -2%;
-                }
+        &__img-under {
+            top: -62px; 
+            right: -1%;
+
+            @include rmin($desktop-s) {
+                top: -83px;
+            }
+
+            @include rmin($desktop-l) {
+                top: -1px;
+                right: -2%;
+
+                max-width: 915px;
+            }
+        }
+
+        &__img-over {
+            right: -3%;
+
+            @include rmin($desktop-s) {
+                bottom: 17px;
+            }
+
+            @include rmin($desktop-l) {
+                bottom: -32px;
             }
         }
 
         &__info-btn {
             margin-top: 50px;
+
+            padding: 10px 119px;
         }
     }
 }

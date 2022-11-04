@@ -5,6 +5,10 @@
 
     z-index: 2;
 
+    a {
+        text-decoration: none;
+    }
+
     &__wrap {
         display: flex;
         align-items: center;
@@ -158,8 +162,6 @@
 @include rmin($desktop) {
     .header {        
         &__wrap {
-            max-width: $max-width;
-
             padding: 44px 10px;
 
             @include rmin($desktop-s) {
