@@ -16,12 +16,16 @@
     &__wrap-list {
         margin-top: 25px;
 
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: stretch;
         justify-content: center;
 
         gap: 25px;
+
+        @include rmin($phone-m) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__wrap-item {
@@ -33,7 +37,7 @@
         padding: 20px 22px 14px;
 
         width: 100%;
-        height: 161px;
+        height: 100%;
 
         text-align: center;
 
@@ -41,9 +45,9 @@
         border: 1px solid var(--primary-500);
         border-radius: var(--br--18);
 
-        @include rmin($phone-m) {
-            width: 46%;
-        }
+        // @include rmin($phone-m) {
+        //     width: 46%;
+        // }
 
         strong {
             font-weight: 500;
@@ -73,14 +77,17 @@
         &__wrap-list {
             margin-top: 50px;
 
+            display: flex;
+            flex-wrap: wrap;
+
             gap: 30px;
             row-gap: 32px;
         }
 
         &__wrap-item {
-            padding: 40px 32px 14px;
+            padding: 40px 32px 42px;
+
             width: 30%;
-            height: 218px;
 
             gap: 10px;
 
