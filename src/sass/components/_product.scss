@@ -45,10 +45,6 @@
         border: 1px solid var(--primary-500);
         border-radius: var(--br--18);
 
-        // @include rmin($phone-m) {
-        //     width: 46%;
-        // }
-
         strong {
             font-weight: 500;
             font-size: 20px;
@@ -85,7 +81,7 @@
         }
 
         &__wrap-item {
-            padding: 40px 32px 42px;
+            padding: 40px 32px 62px;
 
             width: 30%;
 
@@ -93,13 +89,40 @@
 
             border-radius: var(--br--24);
 
-            @include rmin($desktop) {
-                width: 30.8%;
+            strong {
+                width: 97%;
             }
 
-            strong,
             span {
-                width: 91%;
+                padding: 0 10px;
+            }
+
+            @include rmin($desktop) {
+                padding: 44px 32px 62px;
+                width: 30.8%;
+
+                strong {
+                    width: 100%;
+
+                    @include rmin($desktop-s) {
+                        width: 97%;
+                    }
+                }
+
+                span {
+                    padding: 0 19px;
+
+                    @include rmin($desktop-s) {
+                        padding: 0 0;
+                    }
+                }
+            }
+
+        }
+
+        &__wrap-item:last-child {
+            span {
+                height: 48px;
             }
         }
     }
